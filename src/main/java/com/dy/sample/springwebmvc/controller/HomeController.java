@@ -4,19 +4,24 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.dy.sample.springwebmvc.model.User;
 
 @Controller
 public class HomeController {
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    private static final Logger LOG = LoggerFactory.getLogger(HomeController.class);
+    
+    @GetMapping("/")
     public String home(Locale locale, Model model) {
-        System.out.println("Home Page Requested, locale = " + locale);
+        LOG.info("Home Page Requested, locale = {}", locale);
+        
         Date date = new Date();
         DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 
@@ -27,9 +32,10 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    @PostMapping(value = "/user")
     public String user(@Validated User user, Model model) {
-        System.out.println("User Page Requested");
+        LOG.info("User Page Requested");
+        
         model.addAttribute("userName", user.getUserName());
         return "user";
     }
