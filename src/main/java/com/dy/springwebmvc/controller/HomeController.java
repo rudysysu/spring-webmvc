@@ -1,9 +1,10 @@
-package com.dy.sample.springwebmvc.controller;
+package com.dy.springwebmvc.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import com.dy.springwebmvc.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.dy.sample.springwebmvc.model.User;
-import com.dy.sample.springwebmvc.service.UserService;
+import com.dy.springwebmvc.service.UserService;
 
 @Controller
 public class HomeController {
@@ -26,7 +26,9 @@ public class HomeController {
     @GetMapping("/")
     public String home(Locale locale, Model model) {
         LOG.info("Home Page Requested, locale = {}", locale);
-        
+
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+
         Date date = new Date();
         DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 
