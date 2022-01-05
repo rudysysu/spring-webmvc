@@ -1,10 +1,10 @@
-package com.dy.springwebmvc.controller;
+package rudysysu.github.com.spring.webmvc.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import com.dy.springwebmvc.model.User;
+import rudysysu.github.com.spring.webmvc.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.dy.springwebmvc.service.UserService;
+import rudysysu.github.com.spring.webmvc.service.UserService;
 
 @Controller
 public class HomeController {

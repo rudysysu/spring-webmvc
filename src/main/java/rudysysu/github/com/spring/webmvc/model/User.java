@@ -1,4 +1,4 @@
-package com.dy.springwebmvc.model;
+package rudysysu.github.com.spring.webmvc.model;
 
 public class User {
     private String userName;

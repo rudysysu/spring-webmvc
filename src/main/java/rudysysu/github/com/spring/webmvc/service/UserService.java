@@ -1,4 +1,4 @@
-package com.dy.springwebmvc.service;
+package rudysysu.github.com.spring.webmvc.service;
 
 import org.springframework.stereotype.Service;
 
